@@ -1,0 +1,48 @@
+.inventory-object {
+  display: block;
+  position: relative;
+  justify-self: center;
+
+  height: 75px;
+  width: 100%;
+
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 16px;
+
+  background-color: #353131;
+
+  font-size: 24px;
+  color: #dd6565;
+
+  &:hover {
+    background-color: #6e6e6e;
+    color: #ffffff;
+  }
+  .object-header {
+    height: 70%;
+    .object-name {
+      margin: 0;
+      font-size: 24px;
+    }
+  }
+  .object-body {
+    display: flex;
+    height: 30%;
+
+    justify-content: space-between;
+    .object-description {
+      margin: 0;
+      font-size: 16px;
+      line-height: 16px;
+    }
+    .object-origin {
+      justify-self: flex-end;
+      margin: 0;
+
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
