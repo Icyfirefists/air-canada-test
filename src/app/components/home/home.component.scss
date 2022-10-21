@@ -1,0 +1,51 @@
+.home {
+  display: inline-block;
+  position: relative;
+  height: calc(100vh - 75px);
+
+  // align-items: center;
+  width: 100vw;
+
+  .title-container {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-items: center;
+
+    // min-width: 480px;
+    width: 100%;
+
+
+
+    .inventory-button {
+      display: block;
+      position: relative;
+      justify-self: center;
+
+      height: 75px;
+      width: 300px;
+
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      margin: 0 auto;
+
+      background-color: #353131;
+
+      font-size: 24px;
+      color: #dd6565;
+
+      &:hover {
+        background-color: #6e6e6e;
+        color: #ffffff;
+      }
+    }
+  }
+
+}
