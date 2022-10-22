@@ -1,17 +1,17 @@
 import { createAction, props } from "@ngrx/store";
 
 
-export const login = createAction(
-  '[loginModule] log user Action',
+export const getCoffee = createAction(
+  '[appModule] getCoffee Action',
   props<{ usernamae: string; password: string }>()
 );
 
-export const loginSuccess = createAction(
-  '[loginModule] log user Success Action'
+export const getCoffeeSuccess = createAction(
+  '[appModule] getCoffee Success Action'
 );
 
-export const loginFail = createAction(
-  '[loginModule] log user Fail Action',
+export const getCoffeeFail = createAction(
+  '[appModule] getCoffee Fail Action',
   props<{ message: string }>()
 );
 

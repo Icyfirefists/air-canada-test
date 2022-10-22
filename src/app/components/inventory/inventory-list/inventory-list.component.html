@@ -1,7 +1,9 @@
 <div class="inventory-list">
-  <app-inventory-object
-  [objectName]="data.blend_name"
-  [objectDescription]="data.notes"
-  [objectOrigin]="data.origin"
-  ></app-inventory-object>
+  <ng-container *ngFor="let coffeeObject of data">
+    <app-inventory-object
+    [objectName]="coffeeObject.blend_name"
+    [objectDescription]="coffeeObject.notes"
+    [objectOrigin]="coffeeObject.origin"
+    ></app-inventory-object>
+  </ng-container>
 </div>
