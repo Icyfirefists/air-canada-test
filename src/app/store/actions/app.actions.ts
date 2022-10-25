@@ -1,40 +1,33 @@
+import { HttpErrorResponse } from "@angular/common/http";
 import { Action, createAction, props } from "@ngrx/store";
 import { Coffee } from "../models/coffee";
 
 export enum CoffeeActionType {
   GET_COFFEE = '[COFFEE] Get Coffee',
+  GET_COFFEE_SUCCESS = '[COFFEE] Get Coffee Success',
+  GET_COFFEE_FAIL = '[COFFEE] Get Coffee Fail',
 }
 
-export class GetCoffee implements Action {
-  readonly type = CoffeeActionType.GET_COFFEE;
-  constructor(public payload: { coffee: Coffee[] }) {}
+export const getCoffee = createAction(
+  '[Coffee] getCoffee Action',
+);
 
-}
+export const getCoffeeSuccess = createAction(
+  '[Coffee] getCoffee Success Action',
+  (coffee: ReadonlyArray<Coffee>) => ({ coffee })
+);
 
-export class GetCoffeeSuccess implements Action {
-  readonly type = CoffeeActionType.GET_COFFEE;
-  constructor(public payload: { coffee: Coffee[] }) {}
-}
-
-export class GetCoffeeFail implements Action {
-  readonly type = CoffeeActionType.GET_COFFEE;
-  constructor(public payload: any) {}
-}
+export const getCoffeeFail = createAction(
+  '[Coffee] getCoffee Fail Action',
+  props<{ e: string }>()
+);
 
 
-// export const getCoffee = createAction(
-//   '[appModule] getCoffee Action',
-//   props<{ usernamae: string; password: string }>()
-// );
+// export type CoffeeActions =
+// | GetCoffee
+// | GetCoffeeSuccess
+// | GetCoffeeFail;
 
-// export const getCoffeeSuccess = createAction(
-//   '[appModule] getCoffee Success Action'
-// );
-
-// export const getCoffeeFail = createAction(
-//   '[appModule] getCoffee Fail Action',
-//   props<{ message: string }>()
-// );
 
 
 /*

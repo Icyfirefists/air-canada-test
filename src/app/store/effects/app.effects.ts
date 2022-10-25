@@ -1,36 +1,28 @@
-import { HttpErrorResponse } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import {
+  getCoffee,
+  getCoffeeSuccess,
+} from './../actions/app.actions';
+import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from "@ngrx/store";
-import { of } from "rxjs";
-import { map, catchError, switchMap, withLatestFrom } from 'rxjs/operators';
-import { GetCoffee, GetCoffeeSuccess, GetCoffeeFail, CoffeeActionType } from "../actions/app.actions";
-import { Coffee } from "../models/coffee";
-import { AppService } from "../services/app.service";
-
+import {
+  map,
+  exhaustMap,
+  tap,
+} from 'rxjs/operators';
+import { AppService } from '../services/app.service';
 
 @Injectable()
 export class AppEffects {
-	constructor(
-		private actions$: Actions,
-		private appService: AppService,
-	) {}
+  constructor(private actions$: Actions, private appService: AppService) {}
 
   getCoffee = createEffect(() =>
-		this.actions$.pipe(
-			ofType<GetCoffee>(CoffeeActionType.GET_COFFEE),
-			switchMap((action) => {
-				return this.appService.getCoffee(
-					// action.payload.id
-				).pipe(
-					map((coffee: Coffee[]) => {
-						return new GetCoffeeSuccess({ coffee });
-					}),
-					catchError((e: HttpErrorResponse) => {
-						return of(new GetCoffeeFail(e.status));
-					})
-				);
-			})
-		)
-	);
+    this.actions$.pipe(
+      ofType(getCoffee),
+      exhaustMap(() =>
+        this.appService
+          .getCoffee()
+          .pipe(map((coffee: any) => getCoffeeSuccess(coffee)))
+      )
+    )
+  );
 }
