@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { InventoryComponent } from './inventory.component';
 import { InventoryListComponent } from './inventory-list/inventory-list.component';
 import { InventoryObjectComponent } from './inventory-object/inventory-object.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { InvObjectDetailPageComponent } from './inv-object-detail-page/inv-object-detail-page.component';
 
 
 
@@ -11,11 +13,13 @@ import { InventoryObjectComponent } from './inventory-object/inventory-object.co
   declarations: [
     InventoryComponent,
     InventoryListComponent,
-    InventoryObjectComponent
+    InventoryObjectComponent,
+    InvObjectDetailPageComponent
   ],
   imports: [
     CommonModule,
-    InventoryRoutingModule
+    InventoryRoutingModule,
+    NgxPaginationModule,
   ]
 })
 export class InventoryModule { }

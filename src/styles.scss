@@ -1,6 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
+  --project-clr-1: #353131;
+  --project-clr-2: #dd6565;
+  --project-clr-3: #252020;
+  --project-clr-b: #000000;
+  --project-clr-w: #ffffff;
+
   margin: 0;
-  background-color: #252020;
+  background-color: var(--project-clr-3);
   font-family: Arial;
+}
+
+.ngx-pagination {
+  padding-left: 0;
+  text-align: center;
+  color: white;
+  li {
+    :hover {
+      // background-color: #000000;
+    }
+  }
+  li span {
+    color: var(--project-clr-2);
+  }
+  .pagination-previous a, .pagination-next a{
+    color: var(--project-clr-2);
+  }
+  .current {
+      background-color: var(--project-clr-1) !important;
+      span {
+        color: var(--project-clr-w);
+      }
+  }
 }

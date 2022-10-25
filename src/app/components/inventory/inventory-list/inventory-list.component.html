@@ -1,9 +1,22 @@
 <div class="inventory-list">
-  <ng-container *ngFor="let coffeeObject of data">
-    <app-inventory-object
-    [objectName]="coffeeObject.blend_name"
-    [objectDescription]="coffeeObject.notes"
-    [objectOrigin]="coffeeObject.origin"
-    ></app-inventory-object>
+  <div class="collection-functions">
+    <div>
+      <select class="rowLimiter list-function form-control" (change)="limitListLength($event.target)">
+        <option value={{this.defaultListLength}} selected>Limit No. of Rows:</option>
+        <option *ngFor="let i of listRowLimits; let ind = index" value="{{i}}" >{{i}}</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <ng-container *ngFor="let coffeeObject of data | paginate: { itemsPerPage: this.listLength, currentPage: this.p }; let ind = index">
+    <div (click)="this.selectObject(coffeeObject)">
+      <app-inventory-object
+      [objectName]="coffeeObject.blend_name"
+      [objectDescription]="coffeeObject.notes"
+      [objectOrigin]="coffeeObject.origin"
+      ></app-inventory-object>
+    </div>
   </ng-container>
 </div>

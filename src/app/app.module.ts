@@ -19,7 +19,7 @@ import { AppEffects } from './store/effects/app.effects';
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+.object-detail-container {
+  display: block;
+  width: 100vw;
+  color: var(--project-clr-w);
+  margin-top: 24px;
+  .object-detail {
+    max-width: 75vw;
+    max-height: 75vh;
+    padding: 15px;
+    border-radius: 8px;
+    margin: auto;
+    background-color: var(--project-clr-1);
+    .object-detail-header {
+      color: var(--project-clr-2);
+    }
+    .object-detail-body {
+      // font-size: 24px;
+    }
+  }
+}

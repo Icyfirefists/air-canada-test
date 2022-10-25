@@ -4,7 +4,6 @@
   justify-self: center;
 
   min-height: 75px;
-  width: 100%;
 
   padding: 15px;
   border: none;
@@ -46,6 +45,8 @@
       margin: 0;
       margin-bottom: 0px;
 
+      max-width: 175px;
+
       font-size: 16px;
       line-height: 16px;
     }
@@ -57,7 +58,7 @@
         margin-bottom: 16px;
       }
       .object-origin {
-
+        max-width: 100%;
       }
     }
   }
