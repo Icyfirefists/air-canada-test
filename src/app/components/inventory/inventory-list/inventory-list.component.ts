@@ -1,13 +1,10 @@
 import { getCoffeeState } from './../../../store/selectors/app.selector';
 import { AppService } from './../../../store/services/app.service';
 import { Component, OnInit } from '@angular/core';
-import { Coffee } from 'src/app/store/models/coffee';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { CoffeeState } from 'src/app/store/reducers/app.reducer';
-import { coffeeStateQL } from 'src/app/store/selectors/app.selector';
 import { getCoffee } from 'src/app/store/actions/app.actions';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-inventory-list',

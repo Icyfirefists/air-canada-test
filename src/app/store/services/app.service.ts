@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { CoffeeState } from '../reducers/app.reducer';
+import { Coffee } from '../models/coffee';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class AppService {
   private coffeeEndpoint = 'coffee/random_coffee';
   private sizeQuery = '?size=50';
 
-  constructor(private http: HttpClient, private store: Store<CoffeeState>) { }
+  constructor(private http: HttpClient, private store: Store<Coffee[]>) { }
 
   getCoffee(): Observable<any> {
     return this.http.get(`${this.baseUrl}${this.coffeeEndpoint}${this.sizeQuery}`);
