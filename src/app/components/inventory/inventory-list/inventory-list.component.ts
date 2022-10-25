@@ -18,11 +18,6 @@ export class InventoryListComponent implements OnInit {
   public getCoffee$?: Observable<{state: CoffeeState}>;
 
   listEmpty: boolean = false;
-  defaultListLength: number = 5;
-  listLength: number = 5;
-  listRowLimits = [
-    5,10,15,20
-  ];
 
 
   p: number = 1;
@@ -33,7 +28,6 @@ export class InventoryListComponent implements OnInit {
     this.getCoffee().subscribe({
       next: (res) => {
         this.data = res.state;
-        console.log(res);
       }
     })
   }
@@ -42,26 +36,6 @@ export class InventoryListComponent implements OnInit {
     this.getCoffee$ = this.store.select(getCoffeeState);
 		return this.getCoffee$;
 	}
-
-  limitListLength(eventTarget: any){
-    //Limit Table Length
-    if (eventTarget.value === null || eventTarget.value === "") {
-      this.listLength = this.defaultListLength;
-    } else {
-      this.listLength = eventTarget.value;
-
-    }
-  };
-
-  showNext(value: any){
-    //Limit Table Length
-    if (value === null || value === "") {
-      this.listLength = this.defaultListLength;
-    } else {
-      this.listLength = value;
-    }
-
-  };
 
   selectObject(coffeeObject: Coffee): void {
     let params: NavigationExtras;
