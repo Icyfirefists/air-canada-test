@@ -25,7 +25,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.home-link')?.tagName).toContain('A');
-    expect(compiled.querySelector('.home-link')?.textContent).toContain('Home');
+    expect(compiled.querySelector('.home-link h1')?.textContent).toContain('Coffee Project');
   });
 
   it('should have an inventory link', () => {
