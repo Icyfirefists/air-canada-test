@@ -20,4 +20,16 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a home link', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.home-link')?.textContent).toContain('Home');
+  });
+
+  it('should have an inventory link', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.inventory-link')?.textContent).toContain('Inventory');
+  });
 });
