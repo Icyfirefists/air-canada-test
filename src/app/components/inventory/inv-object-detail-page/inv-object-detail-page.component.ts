@@ -21,7 +21,7 @@ export class InvObjectDetailPageComponent implements OnInit {;
     this.getCoffeeObject()
   }
 
-  getCoffeeObject(): any {
+  getCoffeeObject(): void {
     let currentObjectId: number;
     let dataCollection: any;
     let foundCoffee: Coffee;
@@ -36,7 +36,6 @@ export class InvObjectDetailPageComponent implements OnInit {;
           if (dataCollection.find((x: Coffee) => x.id === Number(currentObjectId)) !== undefined) {
             foundCoffee = dataCollection.find((x: Coffee) => x.id === Number(currentObjectId));
             this.coffeeObject = foundCoffee;
-            console.log(this.coffeeObject);
             return this.coffeeObject;
           } else {
             this.router.navigate(['/inventory']);

@@ -2,14 +2,14 @@
   <div class="object-detail">
     <div class="object-detail-header">
       <h1>
-        {{coffeeObject.blend_name}}
+        {{coffeeObject?.blend_name}}
       </h1>
     </div>
     <div class="object-detail-body">
       <h2>Flavour Notes:</h2>
-      <p>{{coffeeObject.notes}}</p>
+      <p class="notes">{{coffeeObject?.notes}}</p>
       <h2>Coffee Origin:</h2>
-      <p>{{coffeeObject.origin}}</p>
+      <p class="origin">{{coffeeObject?.origin}}</p>
     </div>
   </div>
 </div>

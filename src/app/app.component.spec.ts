@@ -1,12 +1,20 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
+import { reducers } from './store';
+import { AppEffects } from './store/effects/app.effects';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule,
+        StoreModule.forRoot(reducers),
+        EffectsModule.forRoot([AppEffects]),
       ],
       declarations: [
         AppComponent
@@ -30,6 +38,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('air-canada-test app is running!');
+    expect(compiled.querySelector('.test-content span')?.textContent).toContain('air-canada-test app is running!');
   });
 });

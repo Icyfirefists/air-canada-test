@@ -13,7 +13,7 @@ export class AppService {
   private coffeeEndpoint = 'coffee/random_coffee';
   private sizeQuery = '?size=50';
 
-  constructor(private http: HttpClient, private store: Store<Coffee[]>) { }
+  constructor(private http: HttpClient) { }
 
   getCoffee(): Observable<any> {
     return this.http.get(`${this.baseUrl}${this.coffeeEndpoint}${this.sizeQuery}`);
