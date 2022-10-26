@@ -13,6 +13,9 @@
     display: inline-block;
     margin-left: 10px;
     color: var(--project-clr-w);
+    &:hover {
+      color: var(--project-clr-3)
+    }
   }
 
   .header-functions {
