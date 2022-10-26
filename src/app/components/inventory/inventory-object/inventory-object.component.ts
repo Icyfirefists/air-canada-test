@@ -5,16 +5,11 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './inventory-object.component.html',
   styleUrls: ['./inventory-object.component.scss']
 })
-export class InventoryObjectComponent implements OnInit {
+export class InventoryObjectComponent {
 
   @Input() id: string = '';
   @Input() objectName: string = '';
   @Input() objectOrigin: string = '';
   @Input() objectDescription: string = '';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

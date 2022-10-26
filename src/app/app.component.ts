@@ -11,9 +11,7 @@ import { CoffeeState } from './store/reducers/app.reducer';
 export class AppComponent implements OnInit {
   title = 'air-canada-test';
 
-  constructor(private store: Store<CoffeeState>) {
-
-  }
+  constructor(private store: Store<CoffeeState>) {}
 
   ngOnInit() {
     this.store.dispatch(getCoffee());
