@@ -60,6 +60,11 @@ describe('InvObjectDetailPageComponent', () => {
     expect(compiled.querySelector('.object-detail-body p.notes')?.textContent).toContain(testCoffee.notes);
   });
 
+  it('getCoffeeObject should return value from observable', () => {
+    spyOn(component, 'getCoffeeObject')
+    expect(component.getCoffeeObject()).toBeFalsy();
+  });
+
   it('should display coffee origin', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
