@@ -13,5 +13,16 @@
     .object-detail-header {
       color: var(--project-clr-2);
     }
+    .object-detail-body {
+      a {
+        display: block;
+        margin-top: 32px;
+        color: var(--project-clr-w);
+        text-decoration: underline;
+        &:hover {
+          color: var(--project-clr-2)
+        }
+      }
+    }
   }
 }

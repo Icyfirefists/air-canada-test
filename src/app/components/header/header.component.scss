@@ -10,7 +10,23 @@
   background-color: #b7000d;
 
   h1 {
+    display: inline-block;
     margin-left: 10px;
     color: var(--project-clr-w);
+  }
+
+  .header-functions {
+    display: inline-block;
+    margin-left: 25px;
+    a {
+      color: var(--project-clr-w);
+      text-decoration: none;
+      &:hover {
+        color: var(--project-clr-3)
+      }
+    }
+    .inventory-link {
+      margin-left: 10px;
+    }
   }
 }
