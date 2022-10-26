@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CoffeeState } from 'src/app/store/reducers/app.reducer';
 import { Observable } from 'rxjs';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventory-list',
@@ -32,7 +32,6 @@ export class InventoryListComponent implements OnInit {
 	}
 
   selectObject(coffeeObject: Coffee): void {
-    let params: NavigationExtras;
     this.router.navigate(['/inventory/detail-page'], {queryParams: {id: coffeeObject.id}});
   }
 

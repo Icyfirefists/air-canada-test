@@ -20,4 +20,8 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a working navigate method that returns void', () => {
+    expect(component.enterInventory()).toBeFalsy();
+  });
 });
