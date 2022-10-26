@@ -24,12 +24,14 @@ describe('HeaderComponent', () => {
   it('should have a home link', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.home-link')?.tagName).toContain('A');
     expect(compiled.querySelector('.home-link')?.textContent).toContain('Home');
   });
 
   it('should have an inventory link', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.inventory-link')?.tagName).toContain('A');
     expect(compiled.querySelector('.inventory-link')?.textContent).toContain('Inventory');
   });
 });
