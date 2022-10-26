@@ -1,8 +1,7 @@
 import { Coffee } from './../../../store/models/coffee';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { CoffeeState } from 'src/app/store/reducers/app.reducer';
 import { getCoffeeState } from 'src/app/store/selectors/app.selector';
 

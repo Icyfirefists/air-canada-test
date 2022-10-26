@@ -7,7 +7,6 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   map,
   exhaustMap,
-  tap,
 } from 'rxjs/operators';
 import { AppService } from '../services/app.service';
 
