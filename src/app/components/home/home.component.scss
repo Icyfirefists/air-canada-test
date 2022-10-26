@@ -2,13 +2,11 @@
   display: inline-block;
   position: relative;
   height: calc(100vh - 75px);
-
-  // align-items: center;
   width: 100vw;
 
   .title-container {
     width: 100%;
-    color: #ffffff;
+    color: var(--project-clr-w);
     text-align: center;
   }
 
@@ -17,8 +15,6 @@
     position: relative;
     flex-direction: column;
     justify-items: center;
-
-    // min-width: 480px;
     width: 100%;
 
 
@@ -36,10 +32,10 @@
       border-radius: 8px;
       margin: 0 auto;
 
-      background-color: #353131;
+      background-color: var(--project-clr-1);
 
       font-size: 24px;
-      color: #dd6565;
+      color: var(--project-clr-2);
 
       &:hover {
         background-color: #6e6e6e;

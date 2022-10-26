@@ -13,6 +13,8 @@ describe('AppService', () => {
   let service: AppService;
   let httpTestingController: HttpTestingController;
   let url: string;
+  let baseUrl: string;
+  let apiEndpoint: string;
   let testCoffee: Coffee;
 
   beforeEach(() => {
@@ -21,6 +23,8 @@ describe('AppService', () => {
     });
     service = TestBed.inject(AppService);
     httpTestingController = TestBed.get(HttpTestingController);
+    baseUrl = 'https://random-data-api.com/api/';
+    apiEndpoint = 'coffee/random_coffee';
     url = "https://random-data-api.com/api/coffee/random_coffee?size=50";
     testCoffee = {
       id: 1064,
@@ -39,18 +43,12 @@ describe('AppService', () => {
 
   });
 
-  it("should return data", () => {
-  let result: any[];
-  service.getCoffee().subscribe(coffeeData => {
-    result = coffeeData;
-    expect(typeof(result[0])).toEqual(typeof(testCoffee));
-  });
-  const req = httpTestingController.expectOne({
-    method: "GET",
-    url: url
-  });
+it("should have the correct baseUrl", () => {
+  expect(service.baseUrl).toEqual(baseUrl);
+});
 
-  req.flush([testCoffee]);
+it("should have the correct apiEndpoint", () => {
+  expect(service.coffeeEndpoint).toEqual(apiEndpoint);
 });
 
   beforeEach(inject(

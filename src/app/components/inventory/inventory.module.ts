@@ -7,8 +7,6 @@ import { InventoryObjectComponent } from './inventory-object/inventory-object.co
 import { NgxPaginationModule } from 'ngx-pagination';
 import { InvObjectDetailPageComponent } from './inv-object-detail-page/inv-object-detail-page.component';
 
-
-
 @NgModule({
   declarations: [
     InventoryComponent,

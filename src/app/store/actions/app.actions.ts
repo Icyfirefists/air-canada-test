@@ -1,5 +1,4 @@
-import { HttpErrorResponse } from "@angular/common/http";
-import { Action, createAction, props } from "@ngrx/store";
+import { createAction, props } from "@ngrx/store";
 import { Coffee } from "../models/coffee";
 
 export enum CoffeeActionType {

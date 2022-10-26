@@ -9,8 +9,8 @@ import { Coffee } from '../models/coffee';
 })
 export class AppService {
 
-  private baseUrl = 'https://random-data-api.com/api/';
-  private coffeeEndpoint = 'coffee/random_coffee';
+  public baseUrl = 'https://random-data-api.com/api/';
+  public coffeeEndpoint = 'coffee/random_coffee';
   private sizeQuery = '?size=50';
 
   constructor(private http: HttpClient) { }

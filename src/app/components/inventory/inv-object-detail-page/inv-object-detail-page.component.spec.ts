@@ -2,7 +2,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Coffee } from './../../../store/models/coffee';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InvObjectDetailPageComponent } from './inv-object-detail-page.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -48,16 +47,6 @@ describe('InvObjectDetailPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // it('should call getCoffeeObject', () => {
-  //   spyOn(component, 'getCoffeeObject');
-  //   fixture.detectChanges();
-  //   expect(component.getCoffeeObject()).toHaveBeenCalled();
-  // })
-
-  // it('should have a coffeObject of type Coffee', () => {
-  //   expect(typeof(component.coffeeObject)).toBe(typeof(testCoffee));
-  // })
 
   it('should display coffee title', () => {
     fixture.detectChanges();

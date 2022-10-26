@@ -13,7 +13,6 @@ export const getCoffeeState = createSelector(
   }
 );
 
-
 export const coffeeStateQL = {
   getCoffeeState
 };

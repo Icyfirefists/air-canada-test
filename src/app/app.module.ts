@@ -2,10 +2,7 @@ import { AppService } from './store/services/app.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
-// import { todoReducer } from './reducers/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
